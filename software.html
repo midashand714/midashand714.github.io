@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' ; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; form-action 'none'; base-uri 'self'" http-equiv="Content-Security-Policy"/><meta content="no-referrer" name="referrer"/><meta content="noindex, nofollow, noarchive, noimageindex" name="robots"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MIDAS Hand | Software</title>
+<link href="data/icon.png" rel="icon" type="image/png"/>
+
+
+
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div aria-hidden="true" class="page-background"></div>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="MIDAS Hand home" class="brand" href="index.html">
+<img alt="" aria-hidden="true" class="brand-icon" src="data/icon.png"/>
+          MIDAS Hand
+        </a>
+<nav aria-label="Primary navigation" class="nav">
+<a href="index.html">Home</a>
+<a href="parts.html">Parts</a>
+<a href="cad.html">CAD</a>
+<a href="assembly.html">Assembly</a>
+<div class="nav-dropdown">
+<button aria-haspopup="true" class="nav-parent" type="button">Software</button>
+<div aria-label="Software pages" class="nav-menu">
+<a href="software.html">Overview</a>
+<a href="software.html#api">API</a>
+<a href="software.html#mujoco">MuJoCo</a>
+<a href="software.html#retargeter">Retargeter</a>
+<a href="software.html#teleop">Teleop</a>
+</div>
+</div>
+<a href="citation.html">Licensing</a>
+</nav>
+</div>
+</header>
+<main class="page doc-page">
+<section class="page-intro">
+<a class="back-link" href="index.html">Back to overview</a>
+<p class="eyebrow">Software overview</p>
+<h1 class="page-title">Software</h1>
+<p class="page-lede">The software stack has four components: hardware control, MuJoCo simulation, hand retargeting, and live teleoperation. Source code is not included in this review supplement.</p>
+
+</section>
+<section class="section">
+<div class="software-grid software-repo-grid">
+<article class="software-card software-repo-card" id="api">
+<span class="repo-label">Hardware control</span>
+<h3>MIDAS Hand API</h3>
+<p>
+              Python interface for the 13-motor Dynamixel hand and Paxini GEN3 tactile sensors. Includes low-level
+              actuator communication, high-level hand commands, homing, calibration, and tactile readout.
+            </p>
+
+</article>
+<article class="software-card software-repo-card" id="mujoco">
+<span class="repo-label">Simulation</span>
+<h3>MuJoCo Simulation</h3>
+<p>
+              MuJoCo-only whole-hand model with MJCF, URDF, STL meshes, and interactive/headless simulation entrypoints.
+              The non-thumb fingers use closed-loop constraints for PIP-DIP linkage behavior.
+            </p>
+
+</article>
+<article class="software-card software-repo-card" id="retargeter">
+<span class="repo-label">Retargeting</span>
+<h3>Retargeter</h3>
+<p>
+              MIDAS-specific wrappers around dex-retargeting. Owns retargeting configuration, human landmark adapters,
+              output adapters, neutral calibration, tuning knobs, and passive coupling modes.
+            </p>
+
+</article>
+<article class="software-card software-repo-card" id="teleop">
+<span class="repo-label">Teleoperation</span>
+<h3>Teleoperation</h3>
+<p>
+              MediaPipe webcam wrappers that produce MIDAS retargeting inputs and stream commands to print, MuJoCo, or
+              hardware backends with live calibration and debug visualizations.
+            </p>
+
+</article>
+</div>
+
+
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

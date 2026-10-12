@@ -1,8 +1,230 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><title>MIDAS Hand</title></head>
-<body style="font-family:sans-serif;text-align:center;margin-top:20vh">
-  <h1>MIDAS Hand</h1>
-  <p>Project website coming soon.</p>
+
+<html lang="en">
+<head>
+<meta content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-xPWlIhq/SHGy3N0WUBNH34ZT1QkdhNs0GmLnrBNnlBU='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; form-action 'none'; base-uri 'self'" http-equiv="Content-Security-Policy"/><meta content="no-referrer" name="referrer"/><meta content="noindex, nofollow, noarchive, noimageindex" name="robots"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="MIDAS Hand — anonymous supplementary material: robotic hand demonstrations, CAD preview, bill of materials, and assembly guide." name="description"/>
+<title>MIDAS Hand</title>
+<link href="data/icon.png" rel="icon" type="image/png"/>
+
+
+
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div aria-hidden="true" class="page-background"></div>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="MIDAS Hand home" class="brand" href="index.html">
+<img alt="" aria-hidden="true" class="brand-icon" src="data/icon.png"/>
+          MIDAS Hand
+        </a>
+<nav aria-label="Primary navigation" class="nav">
+<a href="index.html">Home</a>
+<a href="parts.html">Parts</a>
+<a href="cad.html">CAD</a>
+<a href="assembly.html">Assembly</a>
+<div class="nav-dropdown">
+<button aria-haspopup="true" class="nav-parent" type="button">Software</button>
+<div aria-label="Software pages" class="nav-menu">
+<a href="software.html">Overview</a>
+<a href="software.html#api">API</a>
+<a href="software.html#mujoco">MuJoCo</a>
+<a href="software.html#retargeter">Retargeter</a>
+<a href="software.html#teleop">Teleop</a>
+</div>
+</div>
+<a href="citation.html">Licensing</a>
+</nav>
+</div>
+</header>
+<main class="page">
+<section aria-labelledby="hero-title" class="hero section">
+<div class="hero-copy">
+<p class="eyebrow">Supplementary material</p>
+<h1 class="hero-title" id="hero-title">MIDAS Hand</h1>
+<p class="hero-subtitle">Modular low-Impedance Direct-drive Anthropomorphic Sensing Hand.</p>
+<p class="hero-summary-line">A dexterous hand platform for robot learning, teleoperation, and manipulation research.</p>
+<p class="authors">Anonymous Authors</p>
+<div aria-label="Primary project links" class="hero-actions" role="navigation">
+
+
+<a class="btn" href="cad.html">CAD</a>
+<a class="btn" href="assembly.html">Assembly</a>
+<a class="btn" href="#demos">Demos</a>
+</div>
+</div>
+<div aria-label="Rotating wireframe render of the MIDAS Hand" class="hero-media hero-viewer" data-hero-edge-angle="18" data-hero-model="data/cad/hand_wireframe.glb" data-hero-wire-mode="edges">
+<canvas class="hero-canvas"></canvas>
+<noscript>
+<p class="hero-noscript">Enable JavaScript to view the hand render.</p>
+</noscript>
+</div>
+</section>
+<section class="section">
+<div class="section-heading">
+<h2 class="section-title">Overview</h2>
+</div>
+<div class="overview-grid">
+<article class="overview-copy">
+<h3 class="subsection-title">Project Summary</h3>
+<p>
+              MIDAS Hand is a low-cost, anthropomorphic, tactile dexterous hand designed for robot learning research,
+              hardware teleoperation, manipulation experiments, and sim-to-real development.
+            </p>
+<p>This supplement includes local demonstration videos, interactive 3D models, a parts list, assembly instructions, and a software overview.</p>
+</article>
+<div aria-label="MIDAS Hand specifications" class="spec-grid">
+<article class="spec-item">
+<span class="spec-label">Total DOF</span>
+<strong><span data-count-target="16" data-count-up="">16</span></strong>
+</article>
+<article class="spec-item">
+<span class="spec-label">Active DOF</span>
+<strong><span data-count-target="13" data-count-up="">13</span></strong>
+</article>
+<article class="spec-item">
+<span class="spec-label">3-Axis Taxels</span>
+<strong><span data-count-target="283" data-count-up="">283</span></strong>
+</article>
+<article class="spec-item">
+<span class="spec-label">Weight</span>
+<strong><span data-count-prefix="~" data-count-suffix=" g" data-count-target="700" data-count-up="">~700 g</span></strong>
+</article>
+<article class="spec-item">
+<span class="spec-label">BOM</span>
+<strong><span data-count-prefix="~$" data-count-suffix="k" data-count-target="3" data-count-up="">~$3k</span></strong>
+</article>
+<article class="spec-item">
+<span class="spec-label">Build Time</span>
+<strong><span data-count-prefix="&lt;" data-count-suffix=" hr" data-count-target="3" data-count-up="">&lt;3 hr</span></strong>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="trailer">
+<div class="section-heading">
+<div>
+<h2 class="section-title">Full System Overview</h2>
+</div>
+</div>
+<div class="trailer-video demo-video">
+<div class="video-unavailable"><strong>Full System Overview</strong><p>Video not available in this preview.</p></div>
+</div>
+</section>
+<section class="section" id="demos">
+<div class="section-heading">
+<h2 class="section-title">Demos</h2>
+<p class="section-kicker">Silent clips with identifying labels and the operator’s face masked.</p></div>
+<div class="demo-grid">
+<article class="demo-card">
+<div class="demo-video">
+<video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata">
+<source src="data/demo/inhand_tool_manip.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="demo-card-heading">
+<h3>Dexterous Manipulation</h3>
+
+</div>
+<p>Tool handling, grasping, and in-hand motion.</p>
+</article>
+<article class="demo-card">
+<div class="demo-video">
+<video autoplay="" controls="" loop="" muted="" playsinline="" poster="data/demo/tactile_demo.jpg" preload="metadata">
+<source src="data/demo/tactile_demo.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="demo-card-heading">
+<h3>Tactile Sensing</h3>
+
+</div>
+<p>Sensor response and contact feedback.</p>
+</article>
+<article class="demo-card">
+<div class="demo-video">
+<video aria-label="Rollout Demo" class="local-video" controls="" playsinline="" poster="data/videos/rollout-demo.jpg" preload="metadata"><source src="data/videos/rollout-demo.mp4" type="video/mp4"/>Your browser does not support this video. <a href="data/videos/rollout-demo.mp4">Download the video</a>.</video>
+</div>
+<h3>Rollouts</h3>
+<p>Dexterous manipulation rollouts demonstrating coordinated hand motion.</p>
+</article>
+<article class="demo-card">
+<div class="demo-video">
+<video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata">
+<source src="data/demo/vision_hardware_retargeting.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="demo-card-heading">
+<h3>Teleoperation</h3>
+
+</div>
+<p>Vision-based hardware retargeting and operator control demo.</p>
+</article>
+<article class="demo-card">
+<div class="demo-video">
+<video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata">
+<source src="data/demo/hardware_test.mp4" type="video/mp4"/>
+</video>
+</div>
+<h3>Hardware Test</h3>
+<p>Hardware testing: impact, lifting, repeatability, and grasping demonstrations.</p>
+</article>
+<article class="demo-card">
+<div class="demo-video">
+<video autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata">
+<source src="data/demo/sim_sync_hardware_10s.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="demo-card-heading">
+<h3>Simulation</h3>
+
+</div>
+<p>Hardware-synchronized MuJoCo simulation view for the simplified MIDAS Hand model.</p>
+</article>
+<article class="demo-card" id="repeatability-test"><div class="demo-video"><video aria-label="Full Repeatability Test" class="local-video" controls="" playsinline="" poster="data/videos/repeatability.jpg" preload="none"><source src="data/videos/repeatability.mp4" type="video/mp4"/>Your browser does not support this video. <a href="data/videos/repeatability.mp4">Download the video</a>.</video></div><h3>Full Repeatability Test</h3><p>The complete 11-minute recording with a close-up dial indicator view. Original motion timing is preserved.</p></article></div>
+</section>
+<section class="section">
+<div class="section-heading">
+<h2 class="section-title">Documentation</h2>
+<p class="section-kicker">Open-source documentation map</p>
+</div>
+<div class="directory-grid">
+<a class="directory-card" href="parts.html">
+<span class="release-index">01</span>
+<h3>Parts</h3>
+<p>Bill of materials, quantities, fabrication notes, and required tools.</p>
+</a>
+<a class="directory-card" href="cad.html">
+<span class="release-index">02</span>
+<h3>CAD</h3>
+<p>Interactive assembly preview, downloadable 3D model, and printing notes.</p>
+</a>
+<a class="directory-card" href="assembly.html">
+<span class="release-index">03</span>
+<h3>Assembly</h3>
+<p>Build order, subassemblies, reference images, and step-by-step instructions.</p>
+</a>
+<a class="directory-card" href="software.html">
+<span class="release-index">04</span>
+<h3>Software</h3>
+<p>Hardware control, simulation, retargeting, and teleoperation overview.</p>
+</a>
+<a class="directory-card" href="citation.html">
+<span class="release-index">05</span>
+<h3>Licensing</h3>
+<p>Hardware, software, and documentation license information.</p>
+</a>
+</div>
+</section>
+</main>
+<script src="script.js"></script>
+<script type="importmap">{
+  "imports": {
+    "three": "./vendor/three/build/three.module.js",
+    "three/addons/": "./vendor/three/examples/jsm/"
+  }
+}</script>
+<script src="hero-viewer.js" type="module"></script>
 </body>
 </html>

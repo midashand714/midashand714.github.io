@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' ; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; form-action 'none'; base-uri 'self'" http-equiv="Content-Security-Policy"/><meta content="no-referrer" name="referrer"/><meta content="noindex, nofollow, noarchive, noimageindex" name="robots"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MIDAS Hand | Parts</title>
+<link href="data/icon.png" rel="icon" type="image/png"/>
+
+
+
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div aria-hidden="true" class="page-background"></div>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="MIDAS Hand home" class="brand" href="index.html">
+<img alt="" aria-hidden="true" class="brand-icon" src="data/icon.png"/>
+          MIDAS Hand
+        </a>
+<nav aria-label="Primary navigation" class="nav">
+<a href="index.html">Home</a>
+<a href="parts.html">Parts</a>
+<a href="cad.html">CAD</a>
+<a href="assembly.html">Assembly</a>
+<div class="nav-dropdown">
+<button aria-haspopup="true" class="nav-parent" type="button">Software</button>
+<div aria-label="Software pages" class="nav-menu">
+<a href="software.html">Overview</a>
+<a href="software.html#api">API</a>
+<a href="software.html#mujoco">MuJoCo</a>
+<a href="software.html#retargeter">Retargeter</a>
+<a href="software.html#teleop">Teleop</a>
+</div>
+</div>
+<a href="citation.html">Licensing</a>
+</nav>
+</div>
+</header>
+<main class="page doc-page">
+<section class="page-intro">
+<a class="back-link" href="index.html">Back to overview</a>
+<p class="eyebrow">Hardware release</p>
+<h1 class="page-title">Parts</h1>
+<p class="page-lede">
+          A builder-focused BOM for sourcing the MIDAS Hand hardware. Start with the parts to buy, then use the
+          included and printed-part sections as references while preparing the build.
+        </p>
+<div class="page-actions"><a class="btn compact" download="" href="data/bom.csv">Download BOM (CSV)</a></div>
+</section>
+<section class="section">
+<div class="bom-summary-grid">
+<article class="bom-stat-card">
+<span>Estimated total</span>
+<strong><span data-count-decimals="2" data-count-format="currency" data-count-prefix="$" data-count-target="2982.53" data-count-up="">$2,982.53</span></strong>
+</article>
+<article class="bom-stat-card">
+<span>Parts to buy</span>
+<strong><span data-count-target="14" data-count-up="">14</span></strong>
+</article>
+<article class="bom-stat-card">
+<span>Printed parts</span>
+<strong><span data-count-target="52" data-count-up="">52</span></strong>
+</article>
+</div>
+<div class="section-heading">
+<div>
+<h2 class="section-title">Parts to Buy</h2>
+<p class="section-kicker">Items builders should source before printing and assembly.</p>
+</div>
+</div>
+<div aria-label="Available purchase bundles" class="official-bundles">
+<article class="official-bundle-card official-bundle-card-simple">
+<h3>ROBOTIS Bundle</h3>
+<p>A ROBOTIS bundle is available for the MIDAS Hand Dynamixel actuators and supporting communication hardware. The purchase link is omitted for anonymization during paper review.</p>
+</article>
+<article class="official-bundle-card official-bundle-card-simple">
+<h3>PAXINI Tactile Bundle</h3>
+<p>A PAXINI bundle is available for the MIDAS Hand tactile sensors, communication board, and connection cables. The purchase links are omitted for anonymization during paper review.</p>
+</article></div>
+<div class="bom-stack">
+<details class="bom-group" open="">
+<summary>
+<span>Dynamixel</span>
+<span>Itemized bundle reference</span>
+</summary>
+<div class="table-wrap bom-table-wrap">
+<table class="bom-table">
+<thead>
+<tr>
+<th>Part</th>
+<th>Qty</th>
+<th>Unit</th>
+<th>Total</th>
+<th>Vendor</th>
+<th>More</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dynamixel Actuators</td>
+<td>13</td>
+<td>$189.75</td>
+<td>$2,466.75</td>
+<td>ROBOTIS</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>XM335-T323-T</dd>
+<dt>Source</dt><dd>ROBOTIS product page</dd>
+<dt>Notes</dt><dd>13 active actuators for the hand.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>Dynamixel Starter Kit</td>
+<td>1</td>
+<td>$68.66</td>
+<td>$68.66</td>
+<td>ROBOTIS</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>902-0161-300</dd>
+<dt>Source</dt><dd>ROBOTIS product page</dd>
+<dt>Notes</dt><dd>Use two X3P 100 mm cables.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>TTL X3P Cable, 180 mm</td>
+<td>1</td>
+<td>$21.85</td>
+<td>$21.85</td>
+<td>ROBOTIS</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>903-0249-000</dd>
+<dt>Source</dt><dd>ROBOTIS product page</dd>
+<dt>Notes</dt><dd>Pack of 10, ideally replaced with a 100 mm X3P cable.</dd>
+</dl>
+</details>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="bom-subgroup">
+<summary>
+<span>Included with Dynamixel purchases</span>
+<span>5 items / no separate cost</span>
+</summary>
+<div class="table-wrap bom-table-wrap">
+<table class="bom-table">
+<thead>
+<tr>
+<th>Part</th>
+<th>Qty</th>
+<th>Unit</th>
+<th>Total</th>
+<th>Vendor</th>
+<th>More</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TTL X3P Cable, 100 mm</td>
+<td>1</td>
+<td>Included</td>
+<td>Included</td>
+<td>ROBOTIS</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>--</dd>
+<dt>Source</dt><dd>Included with the Dynamixel Starter Kit.</dd>
+<dt>Notes</dt><dd>One 100 mm X3P cable is included with the starter kit.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>Horn for XM335</td>
+<td>13</td>
+<td>Included</td>
+<td>Included</td>
+<td>ROBOTIS</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>--</dd>
+<dt>Source</dt><dd>Included with motor packages.</dd>
+<dt>Notes</dt><dd>Contained inside motor packages.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>M1.7x4 Cheese Head Screws</td>
+<td>36</td>
+<td>Included</td>
+<td>Included</td>
+<td>ROBOTIS</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>CHS_M1_7X04</dd>
+<dt>Source</dt><dd>Included with motor packages.</dd>
+<dt>Notes</dt><dd>Contained inside motor packages.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>M2x4 Pan Head Screws</td>
+<td>100</td>
+<td>Included</td>
+<td>Included</td>
+<td>ROBOTIS</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>PHS_M2X04</dd>
+<dt>Source</dt><dd>Included with motor packages.</dd>
+<dt>Notes</dt><dd>Contained inside motor packages.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>Actuator Horn Screws</td>
+<td>13</td>
+<td>Included</td>
+<td>Included</td>
+<td>ROBOTIS</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>FHS_M2X06</dd>
+<dt>Source</dt><dd>Included with motor packages.</dd>
+<dt>Notes</dt><dd>Contained inside motor packages.</dd>
+</dl>
+</details>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</details>
+<details class="bom-group" open="">
+<summary>
+<span>Paxini Tactile</span>
+<span>Itemized bundle reference</span>
+</summary>
+<div class="table-wrap bom-table-wrap">
+<table class="bom-table">
+<thead>
+<tr>
+<th>Part</th>
+<th>Qty</th>
+<th>Unit</th>
+<th>Total</th>
+<th>Vendor</th>
+<th>More</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Finger Tactile Sensor</td>
+<td>3</td>
+<td>$29.30</td>
+<td>$87.90</td>
+<td>Paxini</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>PX6AX-GEN3-DP-S2015-Elite</dd>
+<dt>Source</dt><dd>Paxini product page / AliExpress fallback</dd>
+<dt>Notes</dt><dd>Check RIFs/Paxini ordering notes first. Depending on location and shipping, builders may need to buy this through AliExpress.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>Thumb Tactile Sensor</td>
+<td>1</td>
+<td>$176.46</td>
+<td>$176.46</td>
+<td>Paxini</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>PX6AX-GEN3-DP-M2826-Omega</dd>
+<dt>Source</dt><dd>Paxini product page / AliExpress fallback</dd>
+<dt>Notes</dt><dd>Check RIFs/Paxini ordering notes first. Depending on location and shipping, builders may need to buy this through AliExpress.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>Tactile Sensor Wire</td>
+<td>4</td>
+<td>$2.94</td>
+<td>$11.76</td>
+<td>Paxini</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>DF53_280</dd>
+<dt>Source</dt><dd>Paxini product page / AliExpress fallback</dd>
+<dt>Notes</dt><dd>Check RIFs/Paxini ordering notes first. Depending on location and shipping, builders may need to buy this through AliExpress.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>Paxini High-speed Communication Board</td>
+<td>1</td>
+<td>$73.50</td>
+<td>$73.50</td>
+<td>Paxini</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>--</dd>
+<dt>Source</dt><dd>Paxini product page / AliExpress fallback</dd>
+<dt>Notes</dt><dd>Check RIFs/Paxini ordering notes first. Depending on location and shipping, builders may need to buy this through AliExpress.</dd>
+</dl>
+</details>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<details class="bom-group" open="">
+<summary>
+<span>Hardware and Fasteners</span>
+<span>7 items / $75.65</span>
+</summary>
+<div class="table-wrap bom-table-wrap">
+<table class="bom-table">
+<thead>
+<tr>
+<th>Part</th>
+<th>Qty</th>
+<th>Unit</th>
+<th>Total</th>
+<th>Vendor</th>
+<th>More</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TTL Communication Board</td>
+<td>1</td>
+<td>$13.43</td>
+<td>$13.43</td>
+<td>JLCPCB</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>--</dd>
+<dt>Source</dt><dd>JLCPCB quote page</dd>
+<dt>Notes</dt><dd>Custom communication PCB. Fabrication files are not included in this supplement.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr class="bom-row-detail">
+<td colspan="6">
+<details class="bom-subgroup bom-inline-guide">
+<summary>
+<span>TTL Communication Board Ordering</span>
+<span>PCB ordering walkthroughs</span>
+</summary>
+<div class="bom-order-guide">
+<ol><li>Prepare the communication-board fabrication files for ordering. These files are not included in this supplement.</li><li>Use the ordering walkthroughs below as a reference for the PCB and connector selection.</li></ol>
+<div class="assembly-step-video">
+<div class="video-unavailable"><strong>TTL Communication Board Ordering</strong><p>Video not available in this preview.</p></div>
+</div>
+<div class="assembly-step-video">
+<div class="video-unavailable"><strong>TTL Communication Board Part Order</strong><p>Video not available in this preview.</p></div>
+</div>
+</div>
+</details>
+</td>
+</tr>
+<tr>
+<td>Actuator Bearing</td>
+<td><span class="qty-pack"><strong>13</strong><span>2 packs</span></span></td>
+<td>$8.49</td>
+<td>$16.98</td>
+<td>Amazon</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>MR117-2RS</dd>
+<dt>Source</dt><dd>Amazon listing</dd>
+<dt>Notes</dt><dd>Pack of 10.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>Linkage Bearing</td>
+<td><span class="qty-pack"><strong>18</strong><span>2 packs</span></span></td>
+<td>$7.89</td>
+<td>$15.78</td>
+<td>Amazon</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>681XZZ</dd>
+<dt>Source</dt><dd>Amazon listing</dd>
+<dt>Notes</dt><dd>Pack of 10.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>1.5mmx8mm Dowel Pin</td>
+<td><span class="qty-pack"><strong>15</strong><span>1 pack</span></span></td>
+<td>$5.69</td>
+<td>$5.69</td>
+<td>Amazon</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>hta250711hh000110</dd>
+<dt>Source</dt><dd>Amazon listing</dd>
+<dt>Notes</dt><dd>Pack of 55 pcs.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>M2x6 Socket Head Screws</td>
+<td><span class="qty-pack"><strong>52</strong><span>1 pack</span></span></td>
+<td>$6.59</td>
+<td>$6.59</td>
+<td>Amazon</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>a25041400ux2547</dd>
+<dt>Source</dt><dd>Amazon listing</dd>
+<dt>Notes</dt><dd>Pack of 100, shared with other subassemblies.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>M1.4x4 Socket Head Screws</td>
+<td><span class="qty-pack"><strong>15</strong><span>1 pack</span></span></td>
+<td>$7.19</td>
+<td>$7.19</td>
+<td>Amazon</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>f24080100ux0476</dd>
+<dt>Source</dt><dd>Amazon listing</dd>
+<dt>Notes</dt><dd>Pack of 50, shared with other subassemblies.</dd>
+</dl>
+</details>
+</td>
+</tr>
+<tr>
+<td>M1.6x16 Socket Head Screws</td>
+<td><span class="qty-pack"><strong>4</strong><span>1 pack</span></span></td>
+<td>$9.99</td>
+<td>$9.99</td>
+<td>Amazon</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Part number</dt><dd>a15112300ux0621</dd>
+<dt>Source</dt><dd>Amazon listing</dd>
+<dt>Notes</dt><dd>Pack of 50.</dd>
+</dl>
+</details>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<details class="bom-group">
+<summary>
+<span>3D Printed Parts</span>
+<span>52 total prints / 27 part types</span>
+</summary>
+<div class="table-wrap bom-table-wrap">
+<table class="bom-table bom-table-printed">
+<thead>
+<tr>
+<th>Part</th>
+<th>Qty</th>
+<th>Source</th>
+<th>More</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Finger MCP Roll Horn</td><td>3</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Finger MCP Roll Bearing Holder</td><td>3</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Servo Horn</td><td>4</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Servo Bearing Holder</td><td>4</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Finger DIP Linkage Base</td><td>3</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Finger DIP Linkage</td><td>3</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Finger Side Phalange Bearing Holder</td><td>3</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Finger Side Phalange Horn</td><td>3</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Finger Wire Fixture</td><td>3</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Finger DIP</td><td>3</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Thumb CMC Joint Bearing Holder</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Thumb CMC Joint Servo Horn</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Thumb CMC Fixture</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Thumb DIP 1</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Thumb DIP 2</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Thumb Wire Fixture 1</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Thumb Wire Fixture 2</td><td>2</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Thumb Wire Fixture 3</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>U2D2 Mounting Lock</td><td>3</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Palm Wire Fixture</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Palm Top</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Thumb Wire Fixture 4</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Palm Bottom</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Palm TPU Palm</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Palm Cover</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>Palm Cover Cap</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+<tr><td>PCB Fixture</td><td>1</td><td><a href="cad.html">CAD page</a></td><td><details class="bom-details"><summary>Details</summary><p>3D-printed part; see the CAD preview and printing notes. Manufacturing exports are not included in this supplement.</p></details></td></tr>
+</tbody>
+</table>
+</div>
+</details>
+<details class="bom-group">
+<summary>
+<span>Recommended Tools</span>
+<span>1 item / $49.99 (optional)</span>
+</summary>
+<div class="table-wrap bom-table-wrap">
+<table class="bom-table">
+<thead>
+<tr>
+<th>Tool</th>
+<th>Qty</th>
+<th>Unit</th>
+<th>Total</th>
+<th>Vendor</th>
+<th>More</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JOREST 155-in-1 Mini Electric Precision Screwdriver</td>
+<td>1</td>
+<td>$49.99</td>
+<td>$49.99</td>
+<td>Amazon</td>
+<td>
+<details class="bom-details">
+<summary>Details</summary>
+<dl>
+<dt>Source</dt><dd>Amazon listing</dd>
+<dt>Notes</dt><dd>Optional cordless precision screwdriver with magnetic bits; speeds up assembly of small fasteners. Not required for the build.</dd>
+</dl>
+</details>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+</section>
+</main>
+<div class="image-lightbox" data-image-lightbox="" hidden="">
+<button aria-label="Close enlarged image" class="lightbox-close" data-lightbox-close="" type="button">Close</button>
+<img alt="" data-lightbox-image="" src=""/>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

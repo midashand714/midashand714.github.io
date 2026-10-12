@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-xPWlIhq/SHGy3N0WUBNH34ZT1QkdhNs0GmLnrBNnlBU='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; form-action 'none'; base-uri 'self'" http-equiv="Content-Security-Policy"/><meta content="no-referrer" name="referrer"/><meta content="noindex, nofollow, noarchive, noimageindex" name="robots"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MIDAS Hand | CAD</title>
+<link href="data/icon.png" rel="icon" type="image/png"/>
+
+
+
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div aria-hidden="true" class="page-background"></div>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="MIDAS Hand home" class="brand" href="index.html">
+<img alt="" aria-hidden="true" class="brand-icon" src="data/icon.png"/>
+          MIDAS Hand
+        </a>
+<nav aria-label="Primary navigation" class="nav">
+<a href="index.html">Home</a>
+<a href="parts.html">Parts</a>
+<a href="cad.html">CAD</a>
+<a href="assembly.html">Assembly</a>
+<div class="nav-dropdown">
+<button aria-haspopup="true" class="nav-parent" type="button">Software</button>
+<div aria-label="Software pages" class="nav-menu">
+<a href="software.html">Overview</a>
+<a href="software.html#api">API</a>
+<a href="software.html#mujoco">MuJoCo</a>
+<a href="software.html#retargeter">Retargeter</a>
+<a href="software.html#teleop">Teleop</a>
+</div>
+</div>
+<a href="citation.html">Licensing</a>
+</nav>
+</div>
+</header>
+<main class="page doc-page cad-page">
+<section class="page-intro">
+<a class="back-link" href="index.html">Back to overview</a>
+<p class="eyebrow">Mechanical files</p>
+<h1 class="page-title">CAD</h1>
+<p class="page-lede">Inspect the hand assembly in 3D and download the model included in this supplement.</p>
+<a class="btn compact" href="#cad-release-files">Jump to release files</a>
+</section>
+<section class="section cad-viewer-section">
+<div aria-label="Interactive 3D CAD viewer for the Midas right hand assembly" class="cad-viewer" data-cad-model="data/cad/hand-assembly.glb">
+<canvas class="cad-canvas"></canvas>
+<div aria-label="CAD viewer controls" class="cad-toolbar">
+<button aria-label="Toggle auto-rotate" aria-pressed="true" class="cad-tool is-active" data-cad-action="rotate" title="Toggle auto-rotate" type="button">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<path d="M20 11a8 8 0 0 0-14.8-4.2"></path>
+<path d="M4 4v5h5"></path>
+<path d="M4 13a8 8 0 0 0 14.8 4.2"></path>
+<path d="M20 20v-5h-5"></path>
+</svg>
+</button>
+<button aria-label="Reset view" class="cad-tool" data-cad-action="reset" title="Reset view" type="button">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
+<path d="M3 12a9 9 0 1 0 3-6.7"></path>
+<path d="M3 3v6h6"></path>
+</svg>
+</button>
+</div>
+<div class="cad-status" data-cad-status="" role="status">Loading CAD...</div>
+<noscript>
+<p class="cad-noscript">Enable JavaScript to view the CAD preview.</p>
+</noscript>
+</div>
+</section><section class="section" id="exploded-view"><div class="section-heading"><div><h2 class="section-title">Exploded Assembly View</h2><p class="section-kicker">An animated view of the hand components and their arrangement.</p></div></div><div class="assembly-step-video"><video aria-label="Exploded Assembly View" class="local-video" controls="" playsinline="" poster="data/videos/exploded-view.jpg" preload="metadata"><source src="data/videos/exploded-view.mp4" type="video/mp4"/>Your browser does not support this video. <a href="data/videos/exploded-view.mp4">Download the video</a>.</video></div></section>
+<section class="section anchor-section" id="cad-release-files">
+<div class="section-heading">
+<div>
+<h2 class="section-title">CAD Files</h2>
+<p class="section-kicker">CAD and mechanical exports are released under CERN-OHL-P-2.0.</p>
+</div>
+</div>
+<div class="cad-release-grid">
+<article class="cad-release-card">
+<span class="release-index">GLB</span><h3>Hand Assembly</h3>
+<p>The complete 3D model used in the interactive preview.</p>
+<a class="btn compact" download="" href="data/cad/hand-assembly.glb">Download 3D model</a>
+</article>
+<article class="cad-release-card">
+<span class="release-index">Manufacturing files</span><h3>STEP, 3MF, and URDF</h3>
+<p>These exports are not included in this review supplement.</p>
+</article></div>
+<div class="cad-print-notes">
+<div>
+<p class="eyebrow">Print package</p>
+<h3>Bambu Lab 3MF Notes</h3>
+<p>The design was prepared and tested using a Bambu Lab X1C with a 0.4 mm hotend nozzle. Print settings, part orientation, and plate layout were based on that setup.</p>
+<p>
+              The tested material setup uses Bambu PLA Basic for rigid structural parts and Bambu TPU 95A HF for
+              flexible cover parts.
+            </p>
+</div>
+<div>
+<h4>Plate organization</h4>
+<ul>
+<li><strong>Thumb_Parts</strong> includes all parts required for the thumb.</li>
+<li><strong>Finger_Parts</strong> includes all parts required for one finger and can be used for the index, middle, and ring fingers. For a full hand, this plate needs to be printed 3 times.</li>
+<li><strong>Palm_Parts_1</strong> includes the palm base, small wire fixtures, square washers, and the assembly jig.</li>
+<li><strong>Palm_Parts_2</strong> includes the remaining PLA parts used on the palm.</li>
+<li><strong>Palm_TPU</strong> includes the TPU palm cover.</li>
+<li><strong>TPU_Tip</strong> is an <u>optional</u> print to use in place of Paxini sensors.</li>
+</ul>
+</div>
+<p class="cad-print-warning">
+            Check and adjust slicing settings for your own printer, filament, nozzle size, and calibration before
+            printing. Review part orientation, support settings, and material assignment before starting a build.
+          </p>
+</div>
+</section>
+<section class="section" id="tolerancing-guide"><div class="section-heading"><div><h2 class="section-title">Tolerancing Guide</h2><p class="section-kicker">CAD tolerance adjustments with on-screen instructions. Account details and document URLs are masked for anonymous review.</p></div></div><div class="assembly-step-video"><video aria-label="Tolerancing Guide" class="local-video" controls="" playsinline="" poster="data/videos/tolerancing-guide.jpg" preload="metadata"><source src="data/videos/tolerancing-guide.mp4" type="video/mp4"/>Your browser does not support this video. <a href="data/videos/tolerancing-guide.mp4">Download the video</a>.</video></div></section></main>
+
+<script src="script.js"></script>
+<script type="importmap">{
+  "imports": {
+    "three": "./vendor/three/build/three.module.js",
+    "three/addons/": "./vendor/three/examples/jsm/"
+  }
+}</script>
+<script src="cad-viewer.js" type="module"></script>
+</body>
+</html>

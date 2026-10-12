@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' ; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; form-action 'none'; base-uri 'self'" http-equiv="Content-Security-Policy"/><meta content="no-referrer" name="referrer"/><meta content="noindex, nofollow, noarchive, noimageindex" name="robots"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MIDAS Hand | Assembly</title>
+<link href="data/icon.png" rel="icon" type="image/png"/>
+
+
+
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div aria-hidden="true" class="page-background"></div>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="MIDAS Hand home" class="brand" href="index.html">
+<img alt="" aria-hidden="true" class="brand-icon" src="data/icon.png"/>
+          MIDAS Hand
+        </a>
+<nav aria-label="Primary navigation" class="nav">
+<a href="index.html">Home</a>
+<a href="parts.html">Parts</a>
+<a href="cad.html">CAD</a>
+<a href="assembly.html">Assembly</a>
+<div class="nav-dropdown">
+<button aria-haspopup="true" class="nav-parent" type="button">Software</button>
+<div aria-label="Software pages" class="nav-menu">
+<a href="software.html">Overview</a>
+<a href="software.html#api">API</a>
+<a href="software.html#mujoco">MuJoCo</a>
+<a href="software.html#retargeter">Retargeter</a>
+<a href="software.html#teleop">Teleop</a>
+</div>
+</div>
+<a href="citation.html">Licensing</a>
+</nav>
+</div>
+</header>
+<main class="page doc-page">
+<section class="page-intro">
+<a class="back-link" href="index.html">Back to overview</a>
+<p class="eyebrow">Build guide</p>
+<h1 class="page-title">Assembly</h1>
+<p class="page-lede">
+          Step-by-step build reference for preparing the parts, setting Dynamixel IDs, assembling fingers and thumb,
+          routing tactile sensors, and closing the palm.
+        </p>
+
+</section>
+<section class="section">
+<div class="section-heading">
+<div>
+<h2 class="section-title">Assembly Guide</h2>
+<p class="section-kicker">Video walkthroughs, reference images, and step-by-step build instructions.</p>
+</div>
+</div>
+<div class="assembly-guide">
+<details class="assembly-panel" open="">
+<summary>
+<span>01</span>
+<strong>Prepare Parts</strong>
+<em>Hardware, prints, electronics, tools</em>
+</summary>
+<div class="assembly-wiki">
+<article class="assembly-wiki-step">
+<div>
+<p><strong>1.</strong> Prepare the 6 types of screws, pins, and 2 types of bearings.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>2.</strong> Prepare all 3D-printed (3DP) parts.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>3.</strong> Prepare the motors and wires.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>4.</strong> Prepare the boards, including the U2D2 power hub and Dynamixel collection board.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>5.</strong> Prepare the tactile sensors and their wires.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>6.</strong> Gather necessary tools: tweezers, a JIG, and a screwdriver.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>7.</strong> Check print tolerances before press-fitting bearings and pins. See the <a href="cad.html#tolerancing-guide">tolerancing guide</a>.</p>
+</div>
+</article>
+</div>
+</details>
+<details class="assembly-panel">
+<summary>
+<span>02</span>
+<strong>Set Motor ID</strong>
+<em>Dynamixel setup and neutral alignment</em>
+</summary>
+<div class="assembly-step-video">
+<div class="video-unavailable"><strong>Set Motor IDs</strong><p>Video not available in this preview.</p></div>
+</div>
+<div class="assembly-wiki">
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>1.</strong> Unscrew the Dynamixel to connect the wires.</p>
+</div>
+<figure>
+<img alt="Screw reference" decoding="async" loading="lazy" src="data/figures/figure-003.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-075.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>2.</strong> Connect the wires.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>3.</strong> Warning: Always push the buttons when pulling to prevent wire disconnection.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>4.</strong> Ensure the wire connection for the board matches the reference image.</p>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>5.</strong> Turn on the Dynamixel Wizard software. Set the Protocol to 2.0, port to usbserial, and baud rate to 1,000,000</p>
+</div>
+<figure>
+<img alt="Screw reference" decoding="async" loading="lazy" src="data/figures/figure-050.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>6.</strong> Set motor ID and change baud rate to 4,000,000.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step">
+<div>
+<p><strong>7.</strong> Verify that the horn is positioned at exactly 180 degrees when correctly connected.</p>
+</div>
+<figure>
+<img alt="Screw reference" decoding="async" loading="lazy" src="data/figures/figure-005.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>8.</strong> Assemble the servo horn using an FHS M2x6 screw from the Dynamixel kit.</p>
+</div>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-076.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>9.</strong> Repeat this process for the other motors, assigning IDs from 0 to 12 as shown in the attached image.</p>
+</div>
+<figure>
+<img alt="Screw reference" decoding="async" loading="lazy" src="data/figures/figure-004.png"/>
+</figure>
+</article>
+</div>
+</details>
+<details class="assembly-panel">
+<summary>
+<span>03</span>
+<strong>Index, Middle, and Ring Finger Assembly</strong>
+<em>MCP, DIP linkage, bearings, pins</em>
+</summary>
+<div class="assembly-step-video">
+<div class="video-unavailable"><strong>Finger Assembly</strong><p>Video not available in this preview.</p></div>
+</div>
+<div class="assembly-wiki">
+<article class="assembly-wiki-step">
+<div>
+<p><strong>1.</strong> Assemble Motor 5 to the 3D printed MCP part</p>
+</div>
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-051.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>2.</strong> Assemble Motor 6 to the 3D printed MCP part, ensuring the encoder value is 180 degrees and the motor aligns perfectly with the 3DP parts.</p>
+</div>
+<figure>
+<img alt="Step 15" decoding="async" loading="lazy" src="data/figures/figure-052.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>3.</strong> Bolt in the MCP 3D printed parts Guide the wires through the designated paths in the 3D-printed parts to avoid pinching.</p>
+</div>
+<figure>
+<img alt="Step 16" decoding="async" loading="lazy" src="data/figures/figure-053.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step">
+<div>
+<p><strong>4.</strong> Leave a margin of wire length between Motor 5 and Motor 6, storing the excess wire inside Motor 5.</p>
+</div>
+<figure>
+<img alt="Step 18" decoding="async" loading="lazy" src="data/figures/figure-006.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>5.</strong> Be careful not to pinch wires inside the motor to prevent damage or short circuits.</p>
+</div>
+<figure>
+<img alt="Step 18" decoding="async" loading="lazy" src="data/figures/figure-049.jpg"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>6.</strong> Screw to close the motor case</p>
+</div>
+<figure>
+<img alt="Step 18" decoding="async" loading="lazy" src="data/figures/figure-003.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-075.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>7.</strong> Connect Motor 4 and Motor 5.</p>
+</div>
+<figure>
+<img alt="Step 20" decoding="async" loading="lazy" src="data/figures/figure-055.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-075.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>8.</strong> Organize the wiring neatly between Motor 4 and Motor 5.</p>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>9.</strong> Connect Motor 4 and Motor 5 again, double-checking the servo horn direction and ensuring the part alignment remains at 180 degrees.</p>
+</div>
+<figure>
+<img alt="Step 25" decoding="async" loading="lazy" src="data/figures/figure-056.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-075.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>10.</strong> Prepare the JIG for assembly.</p>
+</div>
+<figure>
+<img alt="Step 25" decoding="async" loading="lazy" src="data/figures/figure-071.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>11.</strong> Place two bearings into the designated 3D-printed part.</p>
+</div>
+<figure>
+<img alt="Step 26" decoding="async" loading="lazy" src="data/figures/figure-057.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>12.</strong> Assemble the two parts as shown in the picture and place them into the JIG.</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Step 27" decoding="async" loading="lazy" src="data/figures/figure-059.png"/>
+</figure>
+<figure class="figure--right">
+<img alt="Step 28" decoding="async" loading="lazy" src="data/figures/figure-058.png"/>
+</figure>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>13.</strong> Put on the JIG cover and push the first pin in.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>14.</strong> Remove the cover and push the pin further down</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>15.</strong> Put back the cover and use a second pin to push the first pin deeper into place</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>16.</strong> Put back the cover and use a second pin to push the first pin deeper into place then remove the second pin</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>17.</strong> Verify that the assembled joint has minimal friction and moves smoothly</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>18.</strong> Place 4 bearings into the DIP joint.</p>
+</div>
+<figure>
+<img alt="Step 32" decoding="async" loading="lazy" src="data/figures/figure-060.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>19.</strong> Align the DIP, Linkage, and DIP Link 3D-printed parts, then place them into the JIG</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Step 33" decoding="async" loading="lazy" src="data/figures/figure-072.png"/>
+</figure>
+<figure class="figure--right">
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-062.png"/>
+</figure>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>20.</strong> Insert the pin</p>
+</div>
+<figure>
+<img alt="Step 34" decoding="async" loading="lazy" src="data/figures/figure-063.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>21.</strong> Flip the JIG over and push the pin in from the other sid</p>
+</div>
+<figure>
+<img alt="Step 35" decoding="async" loading="lazy" src="data/figures/figure-064.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>22.</strong> Place the first side phalange piece onto the JIG, put on the cover, and push the pin</p>
+</div>
+<figure>
+<img alt="Step 36" decoding="async" loading="lazy" src="data/figures/figure-065.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>23.</strong> Remove the cover and push the pin in</p>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>24.</strong> Repeat the process for the second side phalange piece</p>
+</div>
+<figure>
+<img alt="Step 37" decoding="async" loading="lazy" src="data/figures/figure-066.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>25.</strong> Assemble the DIP Link to Motor 4</p>
+</div>
+<figure>
+<img alt="Step 38" decoding="async" loading="lazy" src="data/figures/figure-067.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>26.</strong> Assemble both side phalanges to Motor 4, verifying the encoder is at 180 degrees and all 3D printed parts align correctly</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Step 39" decoding="async" loading="lazy" src="data/figures/figure-069.png"/>
+</figure>
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-070.png"/>
+</figure>
+</div>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>27.</strong> Tighten the screws connecting both side phalange parts.</p>
+</div>
+<figure>
+<img alt="Step 40" decoding="async" loading="lazy" src="data/figures/figure-068.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-078.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>28.</strong> Verify that the assembled joint has minimal friction and moves smoothly.</p>
+</div>
+</article>
+</div>
+</details>
+<details class="assembly-panel">
+<summary>
+<span>04</span>
+<strong>Thumb Assembly</strong>
+<em>Thumb motors, wire margin, alignment</em>
+</summary>
+<div class="assembly-step-video">
+<div class="video-unavailable"><strong>Thumb Assembly</strong><p>Video not available in this preview.</p></div>
+</div>
+<div class="assembly-wiki">
+<article class="assembly-wiki-step">
+<div>
+<p><strong>1.</strong> Assemble the DIP to Motor 0, making sure the encoder is at 180 degrees and the parts are aligned</p>
+</div>
+<figure>
+<img alt="Step 41" decoding="async" loading="lazy" src="data/figures/figure-038.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>2.</strong> Assemble the 3D-printed parts to Motor 1 and 0, again ensuring the encoder is at 180 degrees and aligned.</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Step 47" decoding="async" loading="lazy" src="data/figures/figure-039.png"/>
+</figure>
+<figure>
+<img alt="Step 48" decoding="async" loading="lazy" src="data/figures/figure-040.png"/>
+</figure>
+</div>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-075.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>3.</strong> Align Motor 0 and Motor 1, keeping the wire length appropriate for the position.</p>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>4.</strong> Organize all margin wires neatly into the Motor 0 housing, keeping cables within the highlighted area and avoiding pinches.</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-073.png"/>
+</figure>
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-047.png"/>
+</figure>
+</div>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-078.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>5.</strong> Route the wire coming from Motor 1 through the designated wire hole in the 3D-printed parts.</p>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>6.</strong> Assemble the respective part with Motor 1.</p>
+</div>
+<figure>
+<img alt="Step 49" decoding="async" loading="lazy" src="data/figures/figure-042.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-075.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>7.</strong> Leave about an inch of wire between Motor 1 and Motor 2, storing the remaining wire inside Motor 2.</p>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>8.</strong> Assemble the respective part with Motor 2.</p>
+</div>
+<figure>
+<img alt="Step 50" decoding="async" loading="lazy" src="data/figures/figure-043.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-075.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>9.</strong> For the connection between Motor 2 and Motor 3, store the margin wire length inside Motor 3.</p>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>10.</strong> Align Motor 2 and Motor 3, confirming the encoder value is at 180 degrees and parts match the picture</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Step 55" decoding="async" loading="lazy" src="data/figures/figure-045.png"/>
+</figure>
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-046.png"/>
+</figure>
+</div>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-075.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-078.png"/>
+</figure>
+</article>
+</div>
+</details>
+<details class="assembly-panel">
+<summary>
+<span>05</span>
+<strong>Tactile Sensor Assembly</strong>
+<em>Finger and thumb tactile routing</em>
+</summary>
+<div class="assembly-step-video">
+<div class="video-unavailable"><strong>Tactile Sensor Assembly</strong><p>Video not available in this preview.</p></div>
+</div>
+<div class="assembly-wiki">
+<article class="assembly-wiki-step assembly-wiki-step--figure-only">
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-081.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>1.</strong> Connect the wire to the sensor, route it through the designated path, and screw in the sensor to the DIP part</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-036.png"/>
+</figure>
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-037.png"/>
+</figure>
+</div>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-079.png"/>
+</figure>
+</article>
+
+<article class="assembly-wiki-step">
+<div>
+<p><strong>2.</strong> Simply push the wires into the hooks located on the side phalanges.</p>
+</div>
+<figure>
+<img alt="Step 56" decoding="async" loading="lazy" src="data/figures/figure-034.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>3.</strong> Unscrew the DIP Link and MCP parts to utilize the internal wire guides.</p>
+</div>
+<figure>
+<img alt="Step 57" decoding="async" loading="lazy" src="data/figures/figure-035.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>4.</strong> Organize the tactile wires on the fingers by anchoring the wire onto the DIP</p>
+</div>
+<figure>
+<img alt="Step 58" decoding="async" loading="lazy" src="data/figures/figure-033.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>5.</strong> Bend the fingers through their full range of motion to ensure enough slack margin for the tactile wires.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--figure-only">
+<figure>
+<img alt="Step 60" decoding="async" loading="lazy" src="data/figures/figure-082.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>6.</strong> Connect the wire to the sensor, route it through the designated path, and screw in the sensor to the DIP part</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Step 60" decoding="async" loading="lazy" src="data/figures/figure-030.png"/>
+</figure>
+<figure>
+<img alt="Step 60" decoding="async" loading="lazy" src="data/figures/figure-037.png"/>
+</figure>
+</div>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-079.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>7.</strong> To organize the thumb's tactile wires, add an anchor point on the DIP.</p>
+</div>
+<figure>
+<img alt="Step 61" decoding="async" loading="lazy" src="data/figures/figure-032.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>8.</strong> Screw in the designated wire guides for the thumb.</p>
+</div>
+<figure>
+<img alt="Step 62" decoding="async" loading="lazy" src="data/figures/figure-031.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>9.</strong> Bend the thumb through its full range of motion to secure enough wire margin</p>
+</div>
+</article>
+</div>
+</details>
+<details class="assembly-panel">
+<summary>
+<span>06</span>
+<strong>Palm Top and Cover Assembly</strong>
+<em>Final hand closure and board mounting</em>
+</summary>
+<div class="assembly-step-video">
+<div class="video-unavailable"><strong>Palm Top and Cover Assembly</strong><p>Video not available in this preview.</p></div>
+</div>
+<div class="assembly-wiki">
+<article class="assembly-wiki-step">
+<div>
+<p><strong>1.</strong> Attach the fully assembled finger to the palm at the specified screw points.</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Step 63" decoding="async" loading="lazy" src="data/figures/figure-013.png"/>
+</figure>
+<figure>
+<img alt="Step 64" decoding="async" loading="lazy" src="data/figures/figure-016.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-078.png"/>
+</figure>
+<br/>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Step 65" decoding="async" loading="lazy" src="data/figures/figure-024.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-079.png"/>
+</figure>
+</div>
+</div>
+</article>
+
+<article class="assembly-wiki-step">
+<div>
+<p><strong>2.</strong> Anchor the thumb tactile wires by tightening one screw, checking for operational slack margin, and then tightening the second screw.</p>
+</div>
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-025.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>3.</strong> Align the two lower boards in the correct direction as shown in the reference image.</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Step 64" decoding="async" loading="lazy" src="data/figures/figure-009.png"/>
+</figure>
+<figure>
+<img alt="Step 65" decoding="async" loading="lazy" src="data/figures/figure-008.png"/>
+</figure>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>4.</strong> Insert four M1.6x16 screws to secure them.</p>
+</div>
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-026.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-080.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>5.</strong> Connect all required wires across the boards.</p>
+</div>
+<figure>
+<img alt="Step 66" decoding="async" loading="lazy" src="data/figures/figure-029.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>6.</strong> Use the corner guide to seat the board onto the palm, ensuring the Type-C connector faces downward.</p>
+</div>
+<figure>
+<img alt="Step 67" decoding="async" loading="lazy" src="data/figures/figure-011.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>7.</strong> Tighten all board screws.</p>
+</div>
+<figure>
+<img alt="Step 68" decoding="async" loading="lazy" src="data/figures/figure-017.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-080.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>8.</strong> Anchor the Palm Top part onto the palm, being extremely careful not to pinch the Dynamixel wires from index and thumb</p>
+</div>
+<div class="assembly-wiki-step__media">
+<figure>
+<img alt="Step 70" decoding="async" loading="lazy" src="data/figures/figure-019.png"/>
+</figure>
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-020.png"/>
+</figure>
+</div>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-078.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-075.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>9.</strong> Double-check that all tactile wires are organized and have sufficient slack for full 4-DOF flexion and extension.</p>
+</div>
+<figure>
+<img alt="Reference image" decoding="async" loading="lazy" src="data/figures/figure-018.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-077.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>10.</strong> Close the cover, ensuring the tactile wires are routed as in the image above. Secure the cover by screwing in all M2x6 screws</p>
+</div>
+<figure>
+<img alt="Step 71" decoding="async" loading="lazy" src="data/figures/figure-022.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-078.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>11.</strong> Connect the main wire to the U2D2 power hub.</p>
+</div>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>12.</strong> Place the U2D2 board onto the palm using the alignment holes.</p>
+</div>
+<figure>
+<img alt="Step 74" decoding="async" loading="lazy" src="data/figures/figure-021.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-078.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step assembly-wiki-step--text-only">
+<div>
+<p><strong>13.</strong> Secure the board using M2x6 screws and square spacers.</p>
+</div>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>14.</strong> Close the cover cap, taking care not to trap any wires.</p>
+</div>
+<figure>
+<img alt="Step 77" decoding="async" loading="lazy" src="data/figures/figure-023.png"/>
+</figure>
+</article>
+<article class="assembly-wiki-step">
+<div>
+<p><strong>15.</strong> Fasten the TPU structure carefully; stop tightening as soon as the screw head is flush with the surface to avoid over-compression.</p>
+</div>
+<figure>
+<img alt="Step 78" decoding="async" loading="lazy" src="data/figures/figure-028.png"/>
+</figure>
+<figure>
+<img alt="Screw reference" class="screw" decoding="async" loading="lazy" src="data/figures/figure-078.png"/>
+</figure>
+</article>
+</div>
+</details>
+</div>
+</section>
+</main>
+<div class="image-lightbox" data-image-lightbox="" hidden="">
+<button aria-label="Close enlarged image" class="lightbox-close" data-lightbox-close="" type="button">Close</button>
+<img alt="" data-lightbox-image="" src=""/>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
